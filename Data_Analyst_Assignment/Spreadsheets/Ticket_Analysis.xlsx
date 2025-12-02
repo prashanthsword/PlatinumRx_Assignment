@@ -1,0 +1,13 @@
+=VLOOKUP(A2, ticket!$E:$C, 3, FALSE)
+
+=QUERY(ticket!A:E,
+"select E, count(A)
+ where date(C) = date(B)
+ group by E",
+1)
+
+=QUERY(ticket!A:E,
+"select E, count(A)
+ where TEXT(B,'yyyy-mm-dd HH') = TEXT(C,'yyyy-mm-dd HH')
+ group by E",
+1)
